@@ -6,15 +6,15 @@ To create Jenkins Freestyle jobs, integrate Jenkins with GitHub, and automate bu
 
 🔹 Requirements
 
-Ubuntu Linux system
+- Ubuntu Linux system
 
-Jenkins installed and running
+- Jenkins installed and running
 
-Git installed
+- Git installed
 
-GitHub account
+- GitHub account
 
-Internet access
+- Internet access
 
 🔹 Task-1: Create a Simple Jenkins Freestyle Job
 🔸 Objective
@@ -25,53 +25,54 @@ To verify Jenkins job execution by running a simple shell command.
 Step 1: Start Jenkins
 
 Open browser and access Jenkins:
-
+```
 http://localhost:8080
-
+```
 
 Login using Jenkins admin credentials.
 
 Step 2: Create a Freestyle Job
 
-Click New Item
+- Click New Item
 
 Enter job name:
-
+```
 Hello-Jenkins-Job
+```
 
+- Select Freestyle project
 
-Select Freestyle project
-
-Click OK
+- Click OK
 
 Step 3: Add Build Step
 
-Scroll to Build
+1.Scroll to Build
 
-Click Add build step
+2.Click Add build step
 
-Select Execute shell
+3.Select Execute shell
 
 Enter the command:
-
+```
 echo "Hello Jenkins"
-
+```
 Step 4: Save and Build
 
-Click Save
+- Click Save
 
-Click Build Now
+- Click Build Now
 
-Open Console Output
+- Open Console Output
 
 🔸 Output
+```
 Hello Jenkins
 Finished: SUCCESS
-
+```
 🔸 Result
-
+```
 The Jenkins Freestyle job executed successfully.
-
+```
 🔹 Task-2: Jenkins with GitHub Integration
 🔸 Objective
 
@@ -80,45 +81,49 @@ To configure Jenkins to clone a GitHub repository using a Freestyle job.
 🔸 Step-by-Step Procedure
 Step 1: Create GitHub Repository
 
-Login to GitHub
+- Login to GitHub
 
-Create a public repository
+- Create a public repository
 
-jenkins-demo
+- jenkins-demo
 
 Step 2: Clone Repository Locally
+```
 git clone https://github.com/<username>/jenkins-demo.git
 cd jenkins-demo
-
+```
 Step 3: Add Sample Code
+```
 echo "Hello Jenkins GitHub Integration" > index.html
 git add index.html
 git commit -m "Initial commit"
 git push origin main
+```
 
 Step 4: Verify Git Installation
+```
 git --version
-
+```
 
 If not installed:
-
+```
 sudo apt update
 sudo apt install git -y
-
+```
 Step 5: Configure Git in Jenkins
-
+```
 Jenkins Dashboard → Manage Jenkins
 
 Click Global Tool Configuration
-
+```
 Under Git:
-
+```
 Name: Default-Git
-
+```
 Path:
-
+```
 /usr/bin/git
-
+```
 
 Click Save
 
@@ -127,9 +132,9 @@ Step 6: Create Jenkins Job
 Click New Item
 
 Job name:
-
+```
 GitHub-Clone-Job
-
+```
 
 Select Freestyle project
 
@@ -142,30 +147,31 @@ Scroll to Source Code Management
 Select Git
 
 Enter:
-
+```
 Repository URL: https://github.com/<username>/jenkins-demo.git
 Branch: */main
-
+```
 
 Leave credentials empty (public repo)
 
 Step 8: Build and Verify
 
-Click Save
+- Click Save
 
-Click Build Now
+- Click Build Now
 
-Open Console Output
+- Open Console Output
 
 🔸 Output
+```
 Cloning the remote Git repository
 Checking out Revision
 Finished: SUCCESS
-
+```
 🔸 Result
-
+```
 Jenkins successfully cloned the GitHub repository.
-
+```
 🔹 Task-3: Automated Build using Poll SCM
 🔸 Objective
 
@@ -175,53 +181,55 @@ To automate Jenkins build execution when source code changes.
 Step 1: Create GitHub Repository
 
 Create a public repository:
-
+```
 jenkins-build-demo
-
+```
 Step 2: Clone Repository
+```
 git clone https://github.com/<username>/jenkins-build-demo.git
 cd jenkins-build-demo
-
+```
 Step 3: Add Build File
+```
 echo "Automated Jenkins Build" > build.txt
 git add build.txt
 git commit -m "Initial build file"
 git push origin main
-
+```
 Step 4: Create Jenkins Job
 
-Jenkins Dashboard → New Item
+- Jenkins Dashboard → New Item
 
 Job name:
-
+```
 Automated-Build-Job
+```
 
+- Select Freestyle project
 
-Select Freestyle project
-
-Click OK
+- Click OK
 
 Step 5: Configure Git SCM
 
 Repository URL:
-
+```
 https://github.com/<username>/jenkins-build-demo.git
-
+```
 
 Branch:
-
+```
 */main
-
+```
 Step 6: Enable Poll SCM
 
-Scroll to Build Triggers
+- Scroll to Build Triggers
 
-Enable Poll SCM
+- Enable Poll SCM
 
 Enter schedule:
-
+```
 H/2 * * * *
-
+```
 Step 7: Add Build Steps
 
 Scroll to Build
@@ -229,47 +237,47 @@ Scroll to Build
 Add Execute shell
 
 Enter:
-
+```
 echo "Build started"
 date
 echo "Files in workspace:"
 ls
 echo "Build completed"
-
+```
 Step 8: Save and Run Initial Build
 
-Click Save
+- Click Save
 
-Click Build Now
+- Click Build Now
 
-Verify build success
+- Verify build success
 
 Step 9: Trigger Automated Build
 
 Modify file:
-
+```
 echo "Triggering automated build" >> build.txt
 git add build.txt
 git commit -m "Trigger build"
 git push origin main
-
+```
 
 Wait 2 minutes.
 
 🔸 Output
-
+```
 Jenkins automatically triggers a new build
-
+```
 Console output:
-
+```
 Build started
 Build completed
 Finished: SUCCESS
-
+```
 🔸 Result
-
+```
 Jenkins automatically detected source code changes and executed the build successfully.
-
+```
 🔹 Final Conclusion
 
 This experiment demonstrated Jenkins Freestyle jobs, GitHub integration, and automated build triggering using SCM polling, validating the Continuous Integration workflow.
