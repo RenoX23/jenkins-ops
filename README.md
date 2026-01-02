@@ -1,10 +1,11 @@
-📘 DevOps Lab Assignment – 4
+# 📘 DevOps Lab Assignment – 4
 Jenkins Freestyle Jobs & Automated Builds
-🔹 Aim
+
+### 🔹 Aim
 
 To create Jenkins Freestyle jobs, integrate Jenkins with GitHub, and automate build execution using SCM polling.
 
-🔹 Requirements
+### 🔹 Requirements
 
 - Ubuntu Linux system
 
@@ -16,7 +17,7 @@ To create Jenkins Freestyle jobs, integrate Jenkins with GitHub, and automate bu
 
 - Internet access
 
-🔹 Task-1: Create a Simple Jenkins Freestyle Job
+## 🔹 Task-1: Create a Simple Jenkins Freestyle Job
 🔸 Objective
 
 To verify Jenkins job execution by running a simple shell command.
@@ -73,7 +74,7 @@ Finished: SUCCESS
 ```
 The Jenkins Freestyle job executed successfully.
 ```
-🔹 Task-2: Jenkins with GitHub Integration
+## 🔹 Task-2: Jenkins with GitHub Integration
 🔸 Objective
 
 To configure Jenkins to clone a GitHub repository using a Freestyle job.
@@ -172,7 +173,7 @@ Finished: SUCCESS
 ```
 Jenkins successfully cloned the GitHub repository.
 ```
-🔹 Task-3: Automated Build using Poll SCM
+## 🔹 Task-3: Automated Build using Poll SCM
 🔸 Objective
 
 To automate Jenkins build execution when source code changes.
@@ -278,6 +279,6 @@ Finished: SUCCESS
 ```
 Jenkins automatically detected source code changes and executed the build successfully.
 ```
-🔹 Final Conclusion
+## 🔹 Final Conclusion
 
 This experiment demonstrated Jenkins Freestyle jobs, GitHub integration, and automated build triggering using SCM polling, validating the Continuous Integration workflow.
